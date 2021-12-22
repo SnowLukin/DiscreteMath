@@ -1,6 +1,8 @@
 import Foundation
 
 struct Task1 {
+    
+    // MARK: Paths
     private let path1 = "diskr1.txt"
     private let path2 = "diskr2.txt"
     private let path3 = "diskr3.txt"
@@ -8,103 +10,113 @@ struct Task1 {
     private let path5 = "diskr5.txt"
     private let path6 = "diskr6.txt"
     
-    private let alphabet = ["a","b","c","d", "e", "f"]
+    // MARK: Alphabet
+    private let alphabet = ["a", "b", "c", "d", "e", "f"]
     
-    func Problem1() {
-        print("Problem1:")
-        problem1_1(i: 1, prefix: "", k: 5)
-        print(iter)
-        
-        iter = 0
-        problem1_2(i: 1, prefix: "")
-        print(iter)
-        
-        iter = 0
-        problem1_3(i: 1, prefix: "", k: 3)
-        print(iter)
-        
-        iter = 0
-        problem1_4(i: 1, prefix: "")
-        print(iter)
-        
-        iter = 0
-        problem1_5(i: 1, prefix: "", k: 4)
-        print(iter)
-        
-        iter = 0
-        problem1_6(i: 1, prefix: "")
-        print(iter)
-        iter = 0
+    // MARK: Start Tasks Methods
+    func startTask1(k: Int) {
+        var count = 0
+        task1(count: &count, startPoint: 1, prefix: "", endPoint: k)
+        print(count)
     }
     
-    //  MARK: - Задание 1.1
+    func startTask2() {
+        var count = 0
+        task2(count: &count, startPoint: 1, prefix: "")
+        print(count)
+    }
+    
+    func startTask3(k: Int) {
+        var count = 0
+        task3(count: &count, startPoint: 1, prefix: "", endPoint: k)
+        print(count)
+    }
+    
+    func startTask4() {
+        var count = 0
+        task4(count: &count, startPoint: 1, prefix: "")
+        print(count)
+    }
+    
+    func startTask5(k: Int) {
+        var count = 0
+        task5(count: &count, startPoint: 1, prefix: "", endPoint: k)
+        print(count)
+    }
+    func startTask6() {
+        var count = 0
+        task6(count: &count, startPoint: 1, prefix: "")
+        print(count)
+    }
+    
+    //  MARK: Task 1.1
     //  n^k
     // Пример:
     //  (6^5) = 7776
-    private func problem1_1(i: Int, prefix: String, k: Int) {
-        if i == k {
+    private func task1(count: inout Int, startPoint start: Int, prefix: String, endPoint end: Int) {
+        if start == end {
             alphabet.forEach { char in
-                iter += 1
+                count += 1
                 writeToURL(text: prefix + char + "\n", fileName: path1)
             }
         } else {
             alphabet.forEach { char in
-                let newI = i + 1
+                let newI = start + 1
                 let newPref = prefix + char
-                problem1_1(i: newI, prefix: newPref, k: k)
+                task1(count: &count, startPoint: newI, prefix: newPref, endPoint: end)
             }
         }
     }
 
-    //  MARK: - Задание 1.2
+    //  MARK: Task 1.2
     // n! (6!) = 720
-    private func problem1_2(i: Int, prefix: String) {
-        if i == alphabet.count {
+    private func task2(count: inout Int, startPoint start: Int, prefix: String) {
+        if start == alphabet.count {
             alphabet.forEach { char in
                 if !prefix.contains(char) {
-                    iter += 1
+                    count += 1
                     writeToURL(text: prefix + char + "\n", fileName: path2)
                 }
             }
         } else {
             alphabet.forEach { char in
                 if !prefix.contains(char) {
-                    let newI = i + 1
+                    let newI = start + 1
                     let newPref = prefix + char
-                    problem1_2(i: newI, prefix: newPref)
+                    task2(count: &count, startPoint: newI, prefix: newPref)
                 }
             }
         }
     }
 
-    //  MARK: - Задание 1.3
+    //  MARK: Task 1.3
     // 1 * 2 * 3 * ... * k
-    private func problem1_3(i: Int, prefix: String,k: Int) {
-        if i == k {
+    private func task3(count: inout Int, startPoint start: Int, prefix: String, endPoint end: Int) {
+        if start == end {
             alphabet.forEach { char in
                 if !prefix.contains(char) {
-                    iter += 1
+                    count += 1
                     writeToURL(text: prefix + char + "\n", fileName: path3)
                 }
             }
         } else {
             alphabet.forEach { char in
                 if !prefix.contains(char) {
-                    let newI = i + 1
+                    let newI = start + 1
                     let newPref = prefix + char
-                    problem1_3(i: newI, prefix: newPref, k: k)
+                    task3(count: &count, startPoint: newI, prefix: newPref, endPoint: end)
                 }
             }
         }
     }
 
-    //  MARK: - Задание 1.4
+    //  MARK: Task 1.4
     //  2^n
     //  (n == 6) == 1024
-    private func problem1_4(i: Int, prefix: String) {
-        let newI = i + 1
-        if i == alphabet.count + 1 {
-            iter += 1
+    private func task4(count: inout Int, startPoint start: Int, prefix: String) {
+        let newI = start + 1
+        if start == alphabet.count + 1 {
+            count += 1
             writeToURL(text: prefix + "\n", fileName: path4)
         } else {
             alphabet.forEach { char in
@@ -116,20 +128,20 @@ struct Task1 {
                 }
                 if !prefix.contains(char) && isNormal {
                     let newPref = prefix + char
-                    iter += 1
+                    count += 1
                     writeToURL(text: newPref + "\n", fileName: path1)
-                    problem1_4(i: newI, prefix: newPref)
+                    task4(count: &count, startPoint: newI, prefix: newPref)
                 }
             }
         }
     }
 
-    //  MARK: - Задание 1.5
+    //  MARK: Task 1.5
     //  C(n,k) = C(6,4) = 15
-    private func problem1_5(i: Int, prefix: String, k: Int) {
-        let newI = i + 1
-        if i == k + 1 {
-            iter += 1
+    private func task5(count: inout Int, startPoint start: Int, prefix: String, endPoint end: Int) {
+        let newI = start + 1
+        if start == end + 1 {
+            count += 1
             writeToURL(text: prefix + "\n", fileName: path5)
         } else {
             alphabet.forEach { char in
@@ -141,18 +153,18 @@ struct Task1 {
                 }
                 if !prefix.contains(char) && isNormal {
                     let newPref = prefix + char
-                    problem1_5(i: newI, prefix: newPref, k: k)
+                    task5(count: &count, startPoint: newI, prefix: newPref, endPoint: end)
                 }
             }
         }
     }
 
-    //  MARK: - Задание 1.6
+    //  MARK: Task 1.6
     //  ~C(n,n) -> ~C(6,6) = 462
-    private func problem1_6(i: Int, prefix: String) {
-        let newI = i + 1
-        if i == alphabet.count + 1 {
-            iter += 1
+    private func task6(count: inout Int, startPoint start: Int, prefix: String) {
+        let newI = start + 1
+        if start == alphabet.count + 1 {
+            count += 1
             writeToURL(text: prefix + "\n", fileName: path6)
         } else {
             alphabet.forEach { char in
@@ -164,7 +176,7 @@ struct Task1 {
                 }
                 if isNormal {
                     let newPref = prefix + char
-                    problem1_6(i: newI, prefix: newPref)
+                    task6(count: &count, startPoint: newI, prefix: newPref)
                 }
             }
         }

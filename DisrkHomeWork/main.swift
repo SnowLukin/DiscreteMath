@@ -1,12 +1,7 @@
 import Foundation
 
-var iter = 0
-
 let task1 = Task1()
-task1.Problem1()
-
 let task2 = Task2()
-task2.Problem2()
 
 //Problem3()
 //Problem4()
