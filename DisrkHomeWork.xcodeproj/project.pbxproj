@@ -22,6 +22,8 @@
 		D7AA923F2771EC4A0027D07B /* Programm11.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA923E2771EC4A0027D07B /* Programm11.swift */; };
 		D7AA92412771EC770027D07B /* Programm12.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA92402771EC770027D07B /* Programm12.swift */; };
 		D7AA92482772BFAC0027D07B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA92472772BFAC0027D07B /* Extensions.swift */; };
+		D7AA924A2773920C0027D07B /* GenerateMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA92492773920C0027D07B /* GenerateMatrix.swift */; };
+		D7AA924D277477F20027D07B /* IZ9.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA924C277477F20027D07B /* IZ9.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +55,8 @@
 		D7AA923E2771EC4A0027D07B /* Programm11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programm11.swift; sourceTree = "<group>"; };
 		D7AA92402771EC770027D07B /* Programm12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programm12.swift; sourceTree = "<group>"; };
 		D7AA92472772BFAC0027D07B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D7AA92492773920C0027D07B /* GenerateMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMatrix.swift; sourceTree = "<group>"; };
+		D7AA924C277477F20027D07B /* IZ9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IZ9.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				D7AA92452772BF920027D07B /* Extensions */,
 				D7AA921F2771E9D80027D07B /* main.swift */,
 				D7AA92272771EA1D0027D07B /* FileWriter.swift */,
+				D7AA92492773920C0027D07B /* GenerateMatrix.swift */,
+				D7AA924B2774770E0027D07B /* IndividualTasks */,
 				D7AA92262771E9F80027D07B /* HomeWork */,
 			);
 			path = DisrkHomeWork;
@@ -118,6 +124,14 @@
 				D7AA92472772BFAC0027D07B /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D7AA924B2774770E0027D07B /* IndividualTasks */ = {
+			isa = PBXGroup;
+			children = (
+				D7AA924C277477F20027D07B /* IZ9.swift */,
+			);
+			path = IndividualTasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +195,7 @@
 				D7AA922B2771EA9B0027D07B /* Programm1.swift in Sources */,
 				D7AA922F2771EAD10027D07B /* Programm3.swift in Sources */,
 				D7AA922D2771EABF0027D07B /* Programm2.swift in Sources */,
+				D7AA924D277477F20027D07B /* IZ9.swift in Sources */,
 				D7AA92372771EBEE0027D07B /* Programm7.swift in Sources */,
 				D7AA92332771EB220027D07B /* Programm5.swift in Sources */,
 				D7AA92202771E9D80027D07B /* main.swift in Sources */,
@@ -193,6 +208,7 @@
 				D7AA923D2771EC3F0027D07B /* Programm10.swift in Sources */,
 				D7AA92312771EAE30027D07B /* Programm4.swift in Sources */,
 				D7AA92392771EC110027D07B /* Programm8.swift in Sources */,
+				D7AA924A2773920C0027D07B /* GenerateMatrix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
