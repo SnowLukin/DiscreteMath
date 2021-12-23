@@ -1,6 +1,6 @@
 import Foundation
 
-struct IZTask9 {
+struct IZTask91 {
     
     var k: Int
     var n: Int
@@ -41,9 +41,9 @@ struct IZTask9 {
 }
 
 // MARK: - Extensions
-extension IZTask9 {
+extension IZTask91 {
     
-    // MARK: Task 9.1
+    // MARK: Task 9.1.1
     private func task1(k: Int, n: Int, m: inout Int) -> Int {
         m += 1
         
@@ -62,11 +62,12 @@ extension IZTask9 {
         }
     }
     
-    // MARK: Task 9.2
+    // MARK: Task 9.1.2
     private func task2(k: Int, n: Int) -> Decimal {
         pow(Decimal(n), k)
     }
     
+    // MARK: Task 9.1.3
     private func task3(k: Int, n: Int) -> Int {
         var sum = 0
         for index in 1...k {
@@ -90,6 +91,7 @@ extension IZTask9 {
         }
     }
     
+    // MARK: Task 9.1.4
     private func task4(k: Int, n: Int) -> Int {
         let temp = n / k
         var sum = 0
@@ -106,6 +108,7 @@ extension IZTask9 {
         return comb(sum + subSum - 1, temp - 1)
     }
     
+    // MARK: Task 9.1.5
     private func task5(k: Int, n: Int) -> Int {
         switch k {
         case 0 where n == 0:
@@ -125,14 +128,12 @@ extension IZTask9 {
 
 
 // MARK: Comb Objects
-extension IZTask9 {
+extension IZTask91 {
     private func factorial(_ number: Int) -> Int {
-        var result = 1
-        
-        for index in 1...number {
-            result *= index
+        if number == 0 {
+            return 0
         }
-        return result
+        return factorial(number - 1) * number
     }
 
     private func comb(_ x: Int, _ y: Int) -> Int {
